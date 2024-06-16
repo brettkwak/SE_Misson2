@@ -11,9 +11,9 @@ pipeline {
 			steps {
 				// Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
 				// window 일 경우 bat
-				// bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/BookSearch.java'
-				bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/*.java'
-				 //bat 'javac -cp "C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" BookSearch/src/com/example/booksearch/BookSearch.java BookSearch/src/com/example/booksearch/BookSearchTest.java'
+				bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/BookSearch.java'
+				//bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/*.java'
+				//bat 'javac -cp "C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" BookSearch/src/com/example/booksearch/BookSearch.java BookSearch/src/com/example/booksearch/BookSearchTest.java'
 			}
 		}
 		stage('Test') {
