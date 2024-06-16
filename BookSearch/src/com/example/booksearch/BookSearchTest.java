@@ -65,4 +65,19 @@ public class BookSearchTest {
         assertEquals(-1, index, "빈 배열에서는 항상 -1을 반환해야 합니다.");
         System.out.println("테스트 'testEmptyArray' 성공");
     }
+    
+    @Test
+    public void testSearchLinear() {
+        int index = BookSearch.search_linear(books, 5);
+        assertEquals(4, index, "4번 책 찾기 테스트");
+        System.out.println("테스트 'testSearchLinear' 성공");
+    }
+    
+    @Test
+    public void testSearchTime() {
+        int index = BookSearch.comparePerformance(books, 5);
+        assertEquals(4, index, "4번 책 찾기 테스트");
+        System.out.println("테스트 'testSearchTime' 성공");
+    }
+
 }
