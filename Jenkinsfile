@@ -27,7 +27,7 @@ pipeline {
 //                    			echo "Running command: ${command}"
                     			bat """java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest --reports-dir='reports'
 					
-			    }
+			    	}
 			}
 		}
 	}
