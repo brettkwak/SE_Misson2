@@ -11,7 +11,7 @@ pipeline {
 			steps {
 				// Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
 				// window 일 경우 bat
-				sh 'javac -encoding UTF-8 -d classes Practice/src/**/*.java'
+				bat 'javac -encoding UTF-8 -d classes Practice/src/**/*.java'
 			}
 		}
 		stage('Test') {
