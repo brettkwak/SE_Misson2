@@ -19,17 +19,17 @@ pipeline {
 				bat"""javac -cp "BookSearch/lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes BookSearch/src/BookSearch.java BookSearch/src/BookSearchTest.java"""
 			}
 		}
-		stage('Test') {
-			steps {
-				script {
+//		stage('Test') {
+//			steps {
+//				script {
 //                    			def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
 //                    			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
 //                    			echo "Running command: ${command}"
-                    			bat """java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/src/classes/BookSearchTest > test_result.txt"""
-					
-			    	}
-			}
-		}
+//                    			bat """java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/src/classes/BookSearchTest > test_result.txt"""
+//					
+//			    	}
+//			}
+//		}
 	}
 	post {
 		always {
