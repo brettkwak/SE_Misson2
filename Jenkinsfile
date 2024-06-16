@@ -16,16 +16,16 @@ pipeline {
 				//bat 'javac -cp "C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" BookSearch/src/com/example/booksearch/BookSearch.java BookSearch/src/com/example/booksearch/BookSearchTest.java'
 			}
 		}
-		stage('Test') {
-			steps {
-				script {
-                    			//def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
-                    			//def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
-                    			//echo "Running command: ${command}"
-                    			//bat command
-					
-			    }
-			}
+//		stage('Test') {
+//			steps {
+//				script {
+//                    			//def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
+//                    			//def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
+//                    			//echo "Running command: ${command}"
+//                    			//bat command
+//					
+//			    }
+//			}
 		}
 	}
 	post {
