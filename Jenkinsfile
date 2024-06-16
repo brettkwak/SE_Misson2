@@ -16,12 +16,15 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-				// JUnit 5 테스트 실행을 위한 classpath 설정
-				def classpath = "classes;lib/;path/to/eclipse/plugins/junit-platform-console-standalone1.7.1.jar"
-				// JUnit 5 테스트 실행
-				bat 'java -cp classes;lib/; path/to/eclipse/plugins/junitplatform-console-standalone-1.7.1.jar
-				org.junit.platform.console.ConsoleLauncher --scan-classpath >
-				test_results.txt'
+			    script {
+				    // JUnit 5 테스트 실행을 위한 classpath 설정
+				    def classpath = """classes;lib/;
+				    path/to/eclipse/plugins/junit-platform-console-standalone1.7.1.jar"""
+				    // JUnit 5 테스트 실행
+				    bat """java -cp classes;lib/; path/to/eclipse/plugins/junitplatform-console-standalone-1.7.1.jar
+				    org.junit.platform.console.ConsoleLauncher --scan-classpath >
+				    test_results.txt"""
+			    }
 			}
 		}
 	}
@@ -31,10 +34,10 @@ pipeline {
 			archiveArtifacts 'test_results.txt'
 		}
 		failure {
-			echo ‘Build or test failed'
+			echo "Build or test failed"
 		}
 		success {
-			echo ‘Build and test succeeded'
+			echo "Build and test succeeded"
 		}
 	}
 }
