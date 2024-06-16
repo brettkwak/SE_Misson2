@@ -21,7 +21,7 @@ pipeline {
 				    def classpath = """classes;lib/;
 				    path/to/eclipse/plugins/junit-platform-console-standalone1.7.1.jar"""
 				    // JUnit 5 테스트 실행
-				    bat """java -cp classes;lib/; C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar
+				    bat """java -cp classes;lib/; C:\Users\Kwak\eclipse\java-2024-06\eclipse\plugins\junit-platform-console-standalone-1.7.1.jar
 				    org.junit.platform.console.ConsoleLauncher --scan-classpath >
 				    test_results.txt"""
 			    }
