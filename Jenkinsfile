@@ -15,7 +15,7 @@ pipeline {
 				//bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/*.java'
 				//bat 'javac -cp "C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" BookSearch/src/com/example/booksearch/BookSearch.java BookSearch/src/com/example/booksearch/BookSearchTest.java'
 				// bat 'javac -cp "lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/BookSearchTest.java'
-				bat"""javac -cp "../lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes BookSearch.java BookSearchTest.java"""
+				bat"""javac -cp "../lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes src/com/example/booksearch/BookSearch.java src/com/example/booksearch/BookSearchTest.java"""
 			}
 		}
 		stage('Test') {
