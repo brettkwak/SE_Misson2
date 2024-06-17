@@ -11,20 +11,28 @@ pipeline {
 			steps {
 				// Java 파일들을 컴파일하여 생성된 클래스 파일을 classes 디렉토리에 저장
 				// window 일 경우 bat
-				sh 'javac -encoding UTF-8 -d classes Practice/src/**/*.java'
+				// bat 'javac -encoding UTF-8 -d classes BookSearch/src/**/*.java'
+				//bat 'javac -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/*.java'
+				//bat 'javac -cp "C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar" BookSearch/src/com/example/booksearch/BookSearch.java BookSearch/src/com/example/booksearch/BookSearchTest.java'
+				// bat 'javac -cp "lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/BookSearchTest.java'
+				// bat"cd BookSearch/src"
+				bat"""javac -cp "BookSearch/lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d BookSearch/classes BookSearch/src/BookSearch.java BookSearch/src/BookSearchTest.java"""
+//				bat"""javac -encoding UTF-8 -d BookSearch/classes BookSearch/src/BookSearch.java BookSearch/src/BookSearchTest.java"""
+
 			}
 		}
 		stage('Test') {
 			steps {
-			    script {
-				    // JUnit 5 테스트 실행을 위한 classpath 설정
-				    def classpath = """classes;lib/;
-				    path/to/eclipse/plugins/junit-platform-console-standalone1.7.1.jar"""
-				    // JUnit 5 테스트 실행
-				    bat """java -cp classes;lib/; path/to/eclipse/plugins/junitplatform-console-standalone-1.7.1.jar
-				    org.junit.platform.console.ConsoleLauncher --scan-classpath >
-				    test_results.txt"""
-			    }
+				script {
+                    			def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
+                    			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
+                    			echo "Running command: ${command}"
+					bat"""cd BookSearch/classes
+                    			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../test_results.txt"""
+//                    			java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/classes/BookSearchTest > ../../test_results.txt"""
+
+					
+			    	}
 			}
 		}
 	}
