@@ -26,7 +26,7 @@ pipeline {
 //                    			def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
 //                    			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
 
-					def command = bat"""cd BookSearch/classes
+					def command = """cd BookSearch/classes
                     			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../test_results.txt"""
                     			echo "Running command: ${command}"
 					bat command
