@@ -28,7 +28,7 @@ pipeline {
                     			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
                     			echo "Running command: ${command}"
 					bat"""cd BookSearch/classes
-                    			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../test_results.txt"""
+                    			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../../test_results.txt"""
 //                    			java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/classes/BookSearchTest > ../../test_results.txt"""
 
 					
