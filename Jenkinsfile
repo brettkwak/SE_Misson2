@@ -29,7 +29,7 @@ pipeline {
                     			echo "Running command: ${command}"
 					bat"""cd BookSearch/classes
                     			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../../test_result.txt"""
-//                    			java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/classes/BookSearchTest > test_result.txt"""
+//                    			java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/classes/BookSearchTest > test_results.txt"""
 
 					
 			    	}
