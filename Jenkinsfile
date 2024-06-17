@@ -25,7 +25,7 @@ pipeline {
 			steps {
 				script {
                     			def classpath = "classes;lib/;C:/Users/Kwak/eclipse/java-2024-06/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
-                    			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
+//                    			def command = "java -cp \"${classpath}\" org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt"
                     			echo "Running command: ${command}"
 					bat"""cd BookSearch/classes
                     			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../../test_results.txt"""
@@ -39,7 +39,7 @@ pipeline {
 	post {
 		always {
 			// 테스트 결과 파일을 저장하기 위해 아카이브
-			archiveArtifacts 'BookSearch/test_results.txt'
+			archiveArtifacts 'test_results.txt'
 		}
 		failure {
 			echo "Build or test failed"
