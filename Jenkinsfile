@@ -17,7 +17,6 @@ pipeline {
 				// bat 'javac -cp "lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d classes BookSearch/src/com/example/booksearch/BookSearchTest.java'
 				// bat"cd BookSearch/src"
 				bat"""javac -cp "BookSearch/lib/junit-platform-console-standalone-1.7.1.jar" -encoding UTF-8 -d BookSearch/classes BookSearch/src/BookSearch.java BookSearch/src/BookSearchTest.java"""
-//				bat"""javac -encoding UTF-8 -d BookSearch/classes BookSearch/src/BookSearch.java BookSearch/src/BookSearchTest.java"""
 
 			}
 		}
@@ -29,7 +28,6 @@ pipeline {
                     			echo "Running command: ${command}"
 					bat"""cd BookSearch/classes
                     			java -jar ../lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearchTest > ../test_results.txt"""
-//                    			java -jar BookSearch/lib/junit-platform-console-standalone-1.7.1.jar -cp "." --select-class BookSearch/classes/BookSearchTest > ../../test_results.txt"""
 
 					
 			    	}
